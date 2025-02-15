@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Branding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2a0000; /* Dark Red */
+            color: #ffcccb;  /* Soft Red */
+        }
+    
+        header {
+            background: #8b0000;  /* Deep Red */
+            color: white;
+            text-align: center;
+            padding: 17px;
+        }
+    
+        nav ul {
+            list-style: none;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            display: flex;
+            justify-content: left;
+            background: #b22222; /* Firebrick Red */
+            margin: 0;
+        }
+    
+        nav ul li {
+            margin: 0 15px;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+        }
+    
+        nav ul li a:hover {
+            background: #ff4500;  /* Bright Orange-Red */
+            border-radius: 5px;
+            color: black;
+        }
+    
+        section {
+            padding: 15px;
+            margin: 15px;
+            background: #a52a2a; /* Brownish Red */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+    
+        #intro {
+            padding: 10px;
+            background: #a52a2a; /* Brownish Red */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin-left: 15px;
+            margin-top: 15px;
+            color: white;
+        }
+    
+        .C2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .C2 button {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 15px;
+            background-color: #ff0000;  /* Pure Red */
+            border-radius: 5px;
+        }
+    
+        .C2 button:hover {
+            background: #ff6347; /* Tomato Red */
+            border-radius: 5px;
+            color: black;
+        }
+    
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+    
+        #gallery button {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 0;
+            background: #b22222; /* Firebrick Red */
+        }
+    
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        footer {
+            background: #8b0000;  /* Deep Red */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    
+        .Iframe-container {
+            display: flex;
+            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .Iframe-container iframe {
+            width: 19.5%;
+        }
+    </style>
+    
+    
+
+
+
+    <script>
+        // Video sets for different sections
+        const videoSets = {
+            introduction: [
+                "ymn9jbEC3NE", "JoOJtVcOKxM", "1WEc8kZIs-8", "d5B8gNxedbY", "lwBvijahIY4"
+            ],
+            features: [
+                "Cg3jvey4Z0Q", "WD8FEvc8HTc", "Pzy0FkpHFIc", "DHY_TdgH63A", "QMbUSb60vPU"
+            ],
+            applications: [
+                "EhGTw7UEgQc", "OWJTBVZ9nwE", "6Tz5eqcaTO0", "csTdKU8xXiU", "tDeNBuS1eJI"
+            ],
+            gallery: [
+                "F0LtuM", "QxAZl6c", "l6P4JME", "wIMoh6I", "Xh4StQ8"
+            ]
+        };
+
+        function loadVideos(category) {
+            const videoContainer = document.getElementById("video-container");
+            videoContainer.innerHTML = ""; // Clear previous videos
+
+            videoSets[category].forEach(videoId => {
+                const iframe = document.createElement("iframe");
+                iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                iframe.width = "19.5%";
+                iframe.height = "155";
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.allowFullscreen = true;
+                videoContainer.appendChild(iframe);
+            });
+        }
+
+        // Load default videos on page load
+        window.onload = () => loadVideos('introduction');
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Personal Branding</h1>
+        <p>Helping individuals grow and manage their online reputation or business presence.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="loadVideos('introduction')">Introduction</a></li>
+            <li><a href="#" onclick="loadVideos('features')">Features</a></li>
+            <li><a href="#" onclick="loadVideos('applications')">Applications</a></li>
+            <li><a href="#" onclick="loadVideos('gallery')">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="C2">
+        <div id="intro">
+            <h2>What is Personal Branding?</h2>
+            <p>Personal branding is the process of creating a unique professional identity that highlights an individual’s strengths, values, and expertise. By consistently sharing insights, engaging with audiences, and showcasing achievements, personal branding helps individuals stand out, build credibility, and establish trust in their industry or field.</p>
+            </div>
+
+        <button id="nextLink">More Info</button>
+    </div>
+
+    <script>
+        const links = [
+            "https://mostourigoatik.com/4/8421464",
+            "https://mostourigoatik.com/4/8436763",
+            "https://mostourigoatik.com/4/8436761"
+        ];
+
+        let index = 0;
+
+        document.getElementById("nextLink").addEventListener("click", function () {
+            window.open(links[index], "_blank");  // Open link in a new tab
+            index = (index + 1) % links.length;   // Cycle back to the first link after the last one
+        });
+    </script>
+
+
+    <section>
+    	<div id="video-container" class="Iframe-container"></div>
+    </section>
+
+    <section id="features">
+        <h2>Key Features of Personal Branding</h2>
+        <ul>
+            <li>Building a unique professional identity.</li>
+            <li>Showcasing expertise through content creation.</li>
+            <li>Establishing trust and credibility with an audience.</li>
+            <li>Leveraging social media for visibility and networking.</li>
+          </ul>
+          
+    </section>
+
+    <section id="applications">
+        <h2>Personal Branding Applications</h2>
+        <p>Personal branding is applied in various industries, helping individuals gain recognition, attract clients, land job opportunities, and build lasting professional relationships, both online and offline.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Personal Branding in Action</h2>
+        <div class="image-gallery">
+            <img src="ai1.webp">
+            <img src="ai2.webp">
+            <img src="ai3.png">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
